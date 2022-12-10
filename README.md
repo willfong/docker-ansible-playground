@@ -2,6 +2,12 @@
 
 Stupid project to use Docker containers instead of VMs to learn about Ansible.
 
+Why?
+
+- Didn't want to set up virtual machines
+- Docker uses a lot less memory
+- Volume mapping (for playbooks) so I can use an editor instead of copying files into a VM
+
 ## Getting Started
 
 Build the images:
