@@ -1,3 +1,8 @@
 FROM rockylinux:8
-RUN yum -y update && yum clean all && yum -y install openssh-clients
+RUN yum -y update && yum clean all && yum -y install \
+  epel-release \
+  openssh-clients
+RUN yum -y install ansible
+RUN curl https://getmic.ro | bash
+RUN mv /micro /bin
 ENTRYPOINT ["tail", "-f", "/dev/null"]
