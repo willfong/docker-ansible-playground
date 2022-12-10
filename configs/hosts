@@ -1,0 +1,2 @@
+worker1 ansible_ssh_pass=rootpass
+worker2 ansible_ssh_pass=rootpass
