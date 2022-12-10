@@ -5,4 +5,8 @@ RUN yum -y update && yum clean all && yum -y install \
 RUN yum -y install ansible
 RUN curl https://getmic.ro | bash
 RUN mv /micro /bin
+RUN echo "[defaults]" > /etc/ansible/ansible.cfg
+RUN echo "host_key_checking=False" >> /etc/ansible/ansible.cfg
+RUN echo "worker1 ansible_ssh_pass=rootpass" > /etc/ansible/hosts
+RUN echo "worker2 ansible_ssh_pass=rootpass" >> /etc/ansible/hosts
 ENTRYPOINT ["tail", "-f", "/dev/null"]
