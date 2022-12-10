@@ -3,7 +3,8 @@ services:
     container_name: controller
     build:
       dockerfile: ./Docker-controller
-
+    volumes:
+      - ./playbooks:/ansible-playbooks
   worker1:
     container_name: worker1
     build:

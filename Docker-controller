@@ -3,9 +3,7 @@ RUN yum -y update && yum clean all && yum -y install \
   epel-release \
   openssh-clients
 RUN yum -y install ansible
-RUN curl https://getmic.ro | bash
-RUN mv /micro /bin
 COPY configs/ansible.cfg /etc/ansible/
 COPY configs/hosts /etc/ansible/
-COPY configs/ping-test.yml /
+WORKDIR /ansible-playbooks
 ENTRYPOINT ["tail", "-f", "/dev/null"]

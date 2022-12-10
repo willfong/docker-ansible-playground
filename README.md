@@ -26,6 +26,7 @@ Test connectivity:
 
 ```
 ansible all -m ping
+ansible-playbook ping-test.yml
 ```
 
 Wipe out containers (to start over):
