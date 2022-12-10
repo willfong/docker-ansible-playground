@@ -1,0 +1,3 @@
+FROM rockylinux:8
+RUN yum -y update && yum clean all && yum -y install openssh-clients
+ENTRYPOINT ["tail", "-f", "/dev/null"]

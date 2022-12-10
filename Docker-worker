@@ -1,0 +1,5 @@
+FROM rockylinux:8
+RUN yum -y update && yum clean all && yum -y install openssh-server passwd
+RUN ssh-keygen -f /etc/ssh/ssh_host_rsa_key -t rsa -N ""
+RUN echo rootpass | passwd root --stdin
+ENTRYPOINT ["/usr/sbin/sshd", "-D"]

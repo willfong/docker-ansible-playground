@@ -1,0 +1,21 @@
+services:
+  controller:
+    container_name: controller
+    build:
+      dockerfile: ./Docker-controller
+    volumes:
+      - ./ssh:/root/.ssh
+
+  worker1:
+    container_name: worker1
+    build:
+      dockerfile: ./Docker-worker
+    volumes:
+      - ./ssh:/root/.ssh
+
+  worker2:
+    container_name: worker2
+    build:
+      dockerfile: ./Docker-worker
+    volumes:
+      - ./ssh:/root/.ssh
